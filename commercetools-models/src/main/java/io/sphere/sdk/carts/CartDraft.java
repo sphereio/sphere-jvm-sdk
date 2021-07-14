@@ -11,6 +11,7 @@ import io.sphere.sdk.models.Address;
 import io.sphere.sdk.models.ResourceIdentifier;
 import io.sphere.sdk.shippingmethods.ShippingMethod;
 import io.sphere.sdk.stores.Store;
+import io.sphere.sdk.taxcategories.ExternalTaxRateDraft;
 import io.sphere.sdk.types.CustomDraft;
 import io.sphere.sdk.types.CustomFieldsDraft;
 
@@ -106,6 +107,10 @@ public interface CartDraft extends CustomDraft {
 
     @Nullable
     List<String> getDiscountCodes();
+
+    @Nullable
+    ExternalTaxRateDraft getExternalTaxRateForShippingMethod();
+
 
     static CartDraftDsl of(final CurrencyUnit currency) {
         return CartDraftDsl.of(currency);
